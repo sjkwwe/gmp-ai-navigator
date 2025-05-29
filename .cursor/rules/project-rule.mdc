@@ -1,0 +1,34 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: "Project rules for a Next.js-based AI Navigator app, using TypeScript, React, Tailwind CSS, and shadcn/ui. Focuses on code style, project structure, AI integration, and best practices for maintainability."
+globs:
+  - "src/**/*.tsx"
+  - "src/**/*.ts"
+  - "app/**/*.tsx"
+  - "app/**/*.ts"
+alwaysApply: true
+---
+
+- All files must use TypeScript and React function components (no class components).
+- Use Next.js App Router (`app/` directory) for all new pages and routing logic.
+- Component, page, and hook files must use PascalCase; utilities and variables use camelCase. File extensions: `.tsx` for components/pages, `.ts` for utilities.
+- Group files by feature or domain when possible: `app/`, `components/`, `hooks/`, `utils/`, `types/`, `lib/`, `styles/`.
+- Styling should be done with Tailwind CSS utility classes. Use shadcn/ui for common UI components. Write custom CSS only for project-wide theming or special cases.
+- All UI must meet accessibility (a11y) standards: include proper ARIA attributes, alt text, and keyboard navigation support.
+- Display clear feedback for loading, error, and success states on all async actions.
+- Use React built-in hooks (`useState`, `useReducer`, etc.) for local state; prefer Context API or Zustand for global/shared state.
+- All AI/LLM integrations (e.g., Gemini, Claude) must document the prompt structure, error handling, and data flow (in comments or `/docs`).
+- Never commit secrets, API keys, or credentials; keep them in environment files excluded by `.gitignore`.
+- All code must pass ESLint and Prettier checks before pushing; enable plugins for React, TypeScript, Tailwind, and accessibility.
+- Keep PRs small and focused. Write [Conventional Commits](https://www.conventionalcommits.org/) messages.
+- Document all new features and APIs in `/docs` or Notion. Significant architectural decisions should be logged as ADRs.
+- Prefer readability and maintainability over cleverness; add JSDoc or concise comments to key logic and custom hooks.
+- Before adding third-party libraries, review documentation, maintenance status, and compatibility with existing stack.
+- When generating or sharing code, always provide usage instructions or a minimal working example when appropriate.
+- If there are multiple valid approaches to a problem, briefly explain trade-offs and recommend the best-fit solution for this project.
+
+
